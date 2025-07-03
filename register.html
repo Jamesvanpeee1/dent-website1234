@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Registration - BrightSmile Dental Clinic</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>BrightSmile Dental Clinic</h1>
+    <p>Your smile, our commitment</p>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="staff-login.html">Staff Login</a>
+    <a href="register.html" class="active">Patient Registration</a>
+    <a href="appointment.php">Appointment</a>
+  </nav>
+
+  <div class="container">
+    <h2>Patient Registration</h2>
+    <form action="register.php" method="POST">
+      <input type="text" name="full_name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <textarea name="address" placeholder="Address" required></textarea>
+      <button type="submit">Register</button>
+    </form>    
+  </div>
+
+  <script>
+    function register(e) {
+      e.preventDefault();
+      const name = document.getElementById("fullName").value;
+      alert("Thank you for registering, " + name + "!");
+      document.querySelector("form").reset();
+    }
+  </script>
+</body>
+</html>

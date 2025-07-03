@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - BrightSmile Dental Clinic</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>BrightSmile Dental Clinic</h1>
+    <p>Your smile, our commitment</p>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="staff-login.html">Staff Login</a>
+    <a href="register.html">Patient Registration</a>
+    <a href="appointment.php">Appointment</a>
+  </nav>
+
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Have questions or need help? Reach out to us using the form below or visit our clinic at:</p>
+    <p><strong>Address:</strong> 123 Smile Avenue, Accra, Ghana<br>
+       <strong>Email:</strong> info@brightsmileclinic.com<br>
+       <strong>Phone:</strong> +233 20 123 4567</p>
+
+    <form onsubmit="submitContactForm(event)">
+      <input type="text" id="contactName" placeholder="Your Name" required />
+      <input type="email" id="contactEmail" placeholder="Your Email" required />
+      <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    function submitContactForm(e) {
+      e.preventDefault();
+      const name = document.getElementById("contactName").value;
+      alert("Thank you, " + name + "! Your message has been received.");
+      document.querySelector("form").reset();
+    }
+  </script>
+</body>
+</html>

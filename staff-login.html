@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Staff Login - BrightSmile Dental Clinic</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>BrightSmile Dental Clinic</h1>
+    <p>Your smile, our commitment</p>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="staff-login.html" class="active">Staff Login</a>
+    <a href="register.html">Patient Registration</a>
+    <a href="appointment.php">Appointment</a>
+  </nav>
+
+  <div class="container">
+    <h2>Staff Login</h2>
+    <form onsubmit="login(event)">
+      <input type="text" id="staffID" placeholder="Staff ID" required />
+      <input type="password" id="staffPassword" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p style="margin-top: 20px; color: #666;">Access is restricted to authorized dental clinic staff only.</p>
+  </div>
+
+  <script>
+    function login(e) {
+      e.preventDefault();
+      const id = document.getElementById("staffID").value;
+      const pass = document.getElementById("staffPassword").value;
+
+      if (id === "admin" && pass === "brightsmile123") {
+        alert("Login successful!");
+        // Redirect to dashboard or staff portal
+        window.location.href = "dashboard.php";
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
